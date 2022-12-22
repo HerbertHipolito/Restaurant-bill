@@ -1,0 +1,31 @@
+
+#description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top:10vh;
+    transition-timing-function: ease;
+    transition-duration: 1.8s;
+  }
+  
+  .active{
+    transform: translateX(7.5vw);
+    max-width: fit-content;
+  }
+  
+  #description p{
+    font-weight: bold;
+    color: white;
+    max-width: fit-content;
+  
+  }
+  
+  #description-p1{
+    font-size: 250%;
+    margin: 5vh 0;
+    
+  }
+  
+   #description-p2 {
+    font-size: 180%;
+  }
