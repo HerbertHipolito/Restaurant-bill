@@ -1,0 +1,60 @@
+#calculate-bill-section{
+    background-color: rgba(254,172,61,255);
+    padding-bottom: 5vh;
+}
+
+#calculate-bill-div{
+    padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#head-btn{
+    display: flex;
+    flex-direction: row;
+}
+
+#head-btn button{
+    border: none;
+    box-shadow: 0px 2px 6px black;
+    padding:1vw;
+    font-size: 140%;
+    width: 30vw;
+    background-color: #eeb05a;
+    transition-duration: 0.5;
+    transition-timing-function: ease;
+}
+
+#head-btn button:hover{
+    background-color: #eba645;
+
+}
+
+.disapper{
+    display:none
+}
+
+#content1,#content2{
+    background-color: #f3ece3;
+    width:60vw;
+    text-align: center;
+    box-shadow: 0px 2px 6px black;
+}
+
+#content2 div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#content2 div p{
+    padding: 1vw;
+    box-shadow: 0px 0px 6px #eba645;
+}
+
+#content1 p,#content2 p{
+    margin: 5vh 0;
+    font-size: 150%;
+}

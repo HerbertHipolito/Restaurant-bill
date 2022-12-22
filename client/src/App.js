@@ -1,10 +1,8 @@
 import './App.css';
-//import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import Table  from './components/tables/tables';
 import TableDetail from './components/body/table/tableDetail';
 import Home from './components/body/home/home';
-//import { useEffect } from 'react';
 import {BrowserRouter as Router,Link,Routes,Route} from 'react-router-dom';
 
 
@@ -28,6 +26,7 @@ function App() {
         <Home/>
 
         </section>
+        
         <Routes>
           <Route path="/" element={<Table/>}/>
           <Route path="/table/:id" element={<TableDetail/>}/>

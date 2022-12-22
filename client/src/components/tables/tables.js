@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 export default function Table(){
 
     const [tables,setTables] = useState([])
-    const [errorMessage,setErrorMessage] = useState('')
+    const [errorMessage,setErrorMessage] = useState('Loading tables')
 
     useEffect(() => {
 
@@ -24,8 +24,7 @@ export default function Table(){
             tables.map(table=>{
                 return(
                     <Link to={`/table/${table._id}`} style={{ textDecoration: 'none' }}>
-                    <li id={table._id}>
-                        {console.log(table._id)}
+                    <li key={table._id}>
                         <p id="table-title">Número da mesa:</p>
                         <p id='table-number'>{table.number}</p>
                         <div>
