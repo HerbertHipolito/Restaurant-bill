@@ -58,3 +58,34 @@
     margin: 5vh 0;
     font-size: 150%;
 }
+
+.draggable.dragging{
+    opacity: 0.5;
+}
+
+#content1,#content2{
+    background-color: #f3ece3;
+    width:60vw;
+    text-align: center;
+    box-shadow: 0px 2px 6px black;
+}
+
+#content2 div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#content2 div p{
+    padding: 1vw;
+    box-shadow: 0px 0px 6px #eba645;
+}
+
+#content1 p,#content2 p{
+    margin: 5vh 0;
+    font-size: 150%;
+}
+
+.draggable.dragging{
+    opacity: 0.5;
+}
