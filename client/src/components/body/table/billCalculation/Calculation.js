@@ -1,5 +1,11 @@
 import React,{useState,useEffect} from'react';
 import './Calculation.css';
+import DraggableFood from './draggable/draggableFood';
+import Droppable from './droppable/droppable';
+
+import {useDrop} from 'react-dnd'
+
+//https://www.youtube.com/watch?v=4bzJrEETW4w&t=701s
 
 function selectContent(e) {
 
@@ -35,7 +41,6 @@ const handleDraggable = () =>{
     const containers = document.querySelectorAll('.container');
 
     draggables.forEach(draggable => {
-
         draggable.addEventListener('dragstart',() => {
             draggable.classList.add('dragging');
         })
@@ -43,13 +48,10 @@ const handleDraggable = () =>{
         draggable.addEventListener('dragend',() => {
             draggable.classList.remove('dragging');
         })
-
     })
 
     console.log(containers,draggables)
-
     containers.forEach(container =>{
-        console.log(container)
         container.addEventListener('dragover',(e)=>{
             e.preventDefault();
             const draggable = document.querySelector('.dragging');
@@ -61,21 +63,20 @@ const handleDraggable = () =>{
 
 export default function Calculation(props){
 
-    const [peopleArray,peopleArraySet] = useState([]);
-
+    const [peopleArray,peopleArraySet] = useState(null);
+    const [board,setBoard] = useState([]);
 
     useEffect(
         ()=>{
-    
+
             var people = []
             for(let i = 0; i < props.tableDetail.people_number; i++){
                 people.push([`person${i}`])
             }
             peopleArraySet([...people])
-            handleDraggable()
-
-
+            //handleDraggable()
         }
+
     ,[props.tableDetail])
 
     return (
@@ -93,25 +94,28 @@ export default function Calculation(props){
                     para {props.tableDetail.people_number}: {calculateAllexpenses(props.tableDetail.orders)/props.tableDetail.people_number} R$
                     </p>:<p>0 Pessoas registradas</p>}
                 </div>
-                <div id="content2" className = 'disapper'>
-                    <div id="food-list">
+            
+                    <div id="content2" >
+                        <div id="draggable-div">
                         {
-                            props.tableDetail.orders.map((food,index)=>{
-                                return <p key={food.name} className='draggable' draggable='true'>{food.name}: {food.price} R$</p>
+                            props.tableDetail.orders.map((food,index)=>{                              
+                            return (
+                                <DraggableFood index={index} food={food} />
+                                )
                             })
                         }
-                    </div>
-                    <div id="people-list">
-                        {console.log(peopleArray)}    
-                        {
-                            peopleArray?peopleArray.map((person,index)=>{
-                                return <p key={person}  className="container">Pessoa {index+1}</p>
-                            }):null?handleDraggable():'loading...'
-                        }
-                    </div>
+                        </div>
+                        <div id="people-list">
+                            {
+                                peopleArray?peopleArray.map((person,index)=>{
+                                    return <Droppable index={index} tableDetail={props.tableDetail}/>
+                                }):'loading...'
+                            }
+                        </div>
+
                 </div>
+                
             </div>
-            
         </section>
 
     )
