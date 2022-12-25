@@ -7,10 +7,7 @@ const cors = require('cors');
 const path = require('path');
 const connectDB = require('./config/dbconfig');
 
-app.options('/user/delete/:id', cors()) // it is necessary to active the delete request.
 app.use((req,res,next)=>{
-    //res.header('Access-Control-Allow-Origin','*');
-    //res.header('Access-Control-Allow-Headers','*');
     res.header('Access-Control-Allow-Origin',"*")
     res.header('Access-Control-Allow-Headers','*');
     cors();
