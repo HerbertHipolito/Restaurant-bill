@@ -19,8 +19,7 @@ function App() {
             <p>myBILL</p>
             <div id="list">
                 <ul>
-                    <li><Link to='/' style={{ textDecoration: 'none' }} id='home'>Home</Link></li>
-                    <li>Mesas</li>
+                    <li><Link to='/' style={{ textDecoration: 'none' }} id='home'>Mesas</Link></li>
                 </ul>
             </div>
         </header>

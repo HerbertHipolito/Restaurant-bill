@@ -25,11 +25,11 @@ export default function Table(){
                 return(
                     <Link to={`/table/${table._id}`} style={{ textDecoration: 'none' }}>
                     <li key={table._id}>
-                        <p id="table-title">Número da mesa:</p>
-                        <p id='table-number'>{table.number}</p>
+                        <p className="table-title">Número da mesa:</p>
+                        <p className='table-number'>{table.number}</p>
                         <div>
                             <p>qtd Pessoas: {table.people_number}</p>
-                            <p>Outra informação aqui: blblablalb</p>
+                            <p>{table.people_number===0?<p className="available-table" >Disponivel</p>:<p className="no-available-table">Não disponível</p>}</p>
                         </div>
 
                     </li>

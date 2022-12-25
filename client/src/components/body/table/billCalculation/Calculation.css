@@ -43,14 +43,12 @@
     box-shadow: 0px 2px 6px black;
 }
 
-
-
 #content1 p,#content2 p{
-    margin: 5vh 0;
+    margin: 1vh 0;
 }
 
-.draggable.dragging{
-    opacity: 0.5;
+.draggable.vanish{
+    display: none;
 }
 
 #content1,#content2{
@@ -64,19 +62,18 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 3vh 0;
 }
 
 #draggable-div p{
     padding: 1vw;
     box-shadow: 0px 0px 6px #eba645;
+    font-size: 150%;
 }
 
-.draggable.dragging{
-    opacity: 0.5;
-}
 
 .container{
-    padding: 1vw;
+    padding: 0.5vw;
     box-shadow: 0px 0px 6px #eba645;
 }
 
@@ -84,7 +81,41 @@
     font-size: 250%;
 }
 
-.foods-in-container p{
-    padding: 1vw;
+.foods-grid{
+    display: grid;
+    gap: 5vh 5vw;
+    margin: 3vw;
+    align-items: center;
+}
+
+.foods{
+    padding: 0.5vh 1vw;
     box-shadow: 0px 0px 6px #eba645;
+    font-size: 130%;
+    max-width: 40vw;
+    min-width: 25vw;
+    justify-self: center;
+}
+
+.remove-btn{
+    position: absolute;
+    margin-left:5.5vw;
+    margin-top: -0.5vw;
+    padding:0.3px 3px;
+    border: none;
+    background-color: #f3ece3;
+}
+
+.no-food-p{
+    text-align: center;
+    font-size: 150%;
+}
+
+.price-p{
+    font-size: 150%;
+}
+
+#price-p-equally{
+    font-size: 150%;
+    padding: 5vh 0;
 }

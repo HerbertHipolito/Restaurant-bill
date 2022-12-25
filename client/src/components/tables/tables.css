@@ -47,7 +47,7 @@
     align-items: center;
 }
 
-#table-title{
+.table-title{
     font-size: 150%;
 }
 
@@ -55,8 +55,20 @@
     padding: 0 1vw;
 }
 
-#table-number{
+.table-number{
    font-size: 250%;
-   margin:2vh 0;
+}
+
+.available-table{
+    background-color: greenyellow;
+}
+
+.no-available-table{
+    background-color: rgb(237, 50, 50);
+}
+
+.available-table,.no-available-table{
+    box-shadow: 0px 0px 3px black;
+    margin: 0;
 }
 
